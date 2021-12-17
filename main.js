@@ -1,6 +1,8 @@
 let res
   function shorturl() {
-	 var url = "https://2b7.us/api/index.php";
+
+    if(document.querySelector("#text").value==""){
+	var url = "https://2b7.us/api/index.php";
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.onreadystatechange = function () {
@@ -10,16 +12,14 @@ let res
             document.getElementById("text").value = xhr.responseText;
           }
         };
-
         xhr.send();
-    if(document.querySelector("#text").value==""){
         alert("Url cannot be empty!")
         return
     }
  
 
     document.getElementById("searchbtn").disabled=true;
-	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
+    document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
