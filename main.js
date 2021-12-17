@@ -33,17 +33,7 @@ let res
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;   
-	var url = "https://2b7.us/api/index.php";
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
-          }
-        };
-        xhr.send();
+	
     $('#exampleModal').modal('show')
   })
 	    
@@ -80,6 +70,18 @@ let res
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: document.querySelector("#text").value })
     }).then(function(response) {
+	    var url = "https://2b7.us/api/index.php";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            document.getElementById("text").value = xhr.responseText;
+          }
+        };
+        xhr.send();
+	    
     return response.json();
   })
   .then(function(myJson) {
