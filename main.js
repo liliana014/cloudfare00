@@ -17,16 +17,6 @@
 let res
   function shorturl() {
     if(document.querySelector("#text").value==""){
-	    var xhr = new XMLHttpRequest();
-      xhr.open("GET", url);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          console.log(xhr.status);
-          console.log(xhr.responseText);
-          document.getElementById("text").value = xhr.responseText;
-        }
-      };
-      xhr.send();
         alert("Url cannot be empty!")
         return
     }
@@ -47,7 +37,7 @@ let res
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;   
-regenerarLink()
+     regenerarLink();
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
