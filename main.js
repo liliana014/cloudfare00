@@ -23,14 +23,16 @@ let res
         
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;
+	            
+     result.onclick = function(){
+      searchbtn.select();
+       document.execCommand('copy');
+		};
+	    
     $('#exampleModal').modal('show')
         
     if(res.key!=="result")
-        
-        result.onclick = function(){
-           searchbtn.select();
-			document.execCommand('copy');
-		};
+
 	
         window.location.reload();
         
