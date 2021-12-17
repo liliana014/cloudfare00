@@ -24,15 +24,15 @@ let res
         
     if(res.key!=="")
     document.getElementById("result").value=window.location.host+res.key;
-	    searchbtn.onclick = function(){
-			result.select();
-			document.execCommand('copy');
-		window.location.reload();
-		};
-	    
+   
     $('#exampleModal').modal('show')
         
     if(res.key!=="result")
+	    searchbtn.onclick = function(){
+	    result.select();
+	    document.execCommand('copy');
+		};
+	    	    window.location.reload();
 	     })
         
         
