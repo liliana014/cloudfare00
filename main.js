@@ -31,8 +31,9 @@ let res
 	    searchbtn.onclick = function(){
 	    result.select();
 	    document.execCommand('copy');
+	    window.location.reload();
 		};
-	    	    window.location.reload();
+	
 	     })
         
         
