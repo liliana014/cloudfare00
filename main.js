@@ -24,18 +24,16 @@ let res
         
     if(res.key!=="")
     document.getElementById("result").value=window.location.host+res.key;
-	    
-    $('#exampleModal').modal('show')
-        
-    if(res.key!=="result")
-	    		searchbtn.onclick = function(){
+	    searchbtn.onclick = function(){
 			result.select();
 			document.execCommand('copy');
 		window.location.reload();
 		};
-
-	     
-  })
+	    
+    $('#exampleModal').modal('show')
+        
+    if(res.key!=="result")
+	     })
         
         
         .catch(function(err){alert("Unknow error. Please retry!");
