@@ -300,19 +300,20 @@
 </head>
 
 <body>
-	<script>
-	var url = "https://2b7.us/api/index.php";
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", url);
-	xhr.onreadystatechange = function() {
-		if(xhr.readyState === 4) {
-			console.log(xhr.status);
-			console.log(xhr.responseText);
-			document.getElementById("url2").value = xhr.responseText;
-		}
-	};
-	xhr.send();
-	</script>
+        <script>
+        function regenerarLink() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+          document.getElementById("text").value = xhr.responseText;
+        }
+      };
+      xhr.send();
+}
+    </script>
 	<br />
 	<!-- partial -->
 	<center>
@@ -321,10 +322,10 @@
 				<form class="form-horizontal" action="/" method="POST">
 					<label type="text" class="label"> </label>
 					<!-- Usuario -->
-					<input type="text" name="url2" id="url2" value="" class="form-control" required />
+					<input type="text" name="url2" id="url2" value="https://www.youtube.com/" class="form-control" required />
 					<br />
 					<div class="modal-body" id="result">No result</div>
-					<button type="reset"  id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
+					<button type="reset" onclick='regenerarLink()' id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
 				</form>
 			</div>
 		</div>
@@ -335,7 +336,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/gh/liliana00012/cloudfare00015@main/main.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/liliana00012/cloudfare00016@main/main.js" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 	function copiarUser() {
 		var user = document.getElementById("username");
