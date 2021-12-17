@@ -1,3 +1,19 @@
+
+        function regenerarLink() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+          document.getElementById("text").value = xhr.responseText;
+        }
+      };
+      xhr.send();
+}
+ 
+
+
 let res
   function shorturl() {
     if(document.querySelector("#text").value==""){
@@ -28,7 +44,7 @@ let res
   document.getElementById("searchbtn").disabled=false;
 			 
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-    document.getElementById("url2").reset();
+
   }
   function copyurl (id, attr) {
     let target = null;
