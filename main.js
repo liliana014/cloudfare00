@@ -1,9 +1,21 @@
-
 let res
+  function shorturl() {
+	 var url = "https://2b7.us/api/index.php";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            document.getElementById("text").value = xhr.responseText;
+          }
+        };
 
+        xhr.send();
     if(document.querySelector("#text").value==""){
         alert("Url cannot be empty!")
         return
+    }
  
 
     document.getElementById("searchbtn").disabled=true;
