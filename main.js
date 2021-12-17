@@ -29,7 +29,7 @@ let res
   document.getElementById("searchbtn").disabled=false;
 			 
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-document.location.reload(true);
+
   }
   function copyurl (id, attr) {
     let target = null;
