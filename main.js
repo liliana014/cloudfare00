@@ -28,9 +28,12 @@ let res
     $('#exampleModal').modal('show')
         
     if(res.key!=="result")
-
-	
+	    		searchbtn.onclick = function(){
+			result.select();
+			document.execCommand('copy');
+		};
         window.location.reload();
+	    
         
   })
         
