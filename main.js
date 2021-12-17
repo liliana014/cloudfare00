@@ -65,23 +65,12 @@ let res
 
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
+	              document.getElementById("text").value = xhr.responseText;
     fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: document.querySelector("#text").value })
-    }).then(function(response) {
-	    var url = "https://2b7.us/api/index.php";
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
-          }
-        };
-        xhr.send();
-	    
+    }).then(function(response) {    
     return response.json();
   })
   .then(function(myJson) {
@@ -90,6 +79,12 @@ let res
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;
+	            document.getElementById("text").value = xhr.responseText;    
+	    
+	    
+	    
+	    
+	    
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
