@@ -19,8 +19,7 @@ let res
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
-    document.getElementById("result").innerHTML=window.location.host+res.key;
-	shorturl();    
+    document.getElementById("result").innerHTML=window.location.host+res.key;   
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
@@ -66,20 +65,3 @@ let res
     $('[data-toggle="popover"]').popover()
   })
 
-
-      function shorturl() {
-        var url = "https://2b7.us/api/index.php";
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
-          }
-        };
-
-        xhr.send();
-      }
