@@ -309,7 +309,7 @@
 				<form class="form-horizontal" action="/" method="POST">
 					<label type="text" class="label"> </label>
 					<!-- Usuario -->
-					<input type="text" name="url2" id="url2" value="" class="form-control" required />
+					<input type="text" name="text" id="text" value="" class="form-control" required />
 					<br />
 					<div class="modal-body" id="result" onclick='copiarUser()'>No result</div>
 					<button type="reset" onclick='shorturl()' id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
@@ -337,7 +337,7 @@
         if (xhr.readyState === 4) {
           console.log(xhr.status);
           console.log(xhr.responseText);
-          document.getElementById("url2").value = xhr.responseText;
+          document.getElementById("text").value = xhr.responseText;
         }
       };
       xhr.send();
