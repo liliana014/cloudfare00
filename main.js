@@ -3,10 +3,6 @@ let res
   function shorturl() {
     if(document.querySelector("#text").value==""){
         alert("Url cannot be empty!")
-	    
-	   var pass = document.getElementById("result");
-            pass.select();
-            document.execCommand("copy"); 
         return
     }
 
