@@ -335,11 +335,7 @@
             console.log(xhr.status);
             console.log(xhr.responseText);
             document.getElementById("text").value = xhr.responseText;
-      searchbtn.onclick = function(){
-	    result.select();
-	    document.execCommand('copy');
-		};
-            
+		           
           }
         };
         xhr.send();
