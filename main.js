@@ -15,17 +15,17 @@ let res
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: document.querySelector("#text").value })
     }).then(function(response) {
-	      searchbtn.onclick = function(){
-	    result.select();
-	    document.execCommand('copy');
-	    window.location.reload();
+ 
     return response.json();
   })
   .then(function(myJson) {
     res = myJson;
-        
+        	      searchbtn.onclick = function(){
+	    result.select();
+	    document.execCommand('copy');
+		};     
     document.getElementById("searchbtn").disabled=false;
-	document.getElementById("searchbtn").innerHTML=' Shorten it';
+   document.getElementById("searchbtn").innerHTML=' Shorten it';
         
         
     if(res.key!=="")
@@ -38,7 +38,7 @@ let res
 	    result.select();
 	    document.execCommand('copy');
 	    window.location.reload();
-		};
+		
 	
 	     })
         
