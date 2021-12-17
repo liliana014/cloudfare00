@@ -23,7 +23,7 @@ let res
         
         
     if(res.key!=="")
-    document.getElementById("result").innerHTML=window.location.host+res.key;
+    document.getElementById("result").value=window.location.host+res.key;
 	    
     $('#exampleModal').modal('show')
         
