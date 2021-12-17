@@ -1,8 +1,9 @@
 let res
   function shorturl() {
-	var user = document.getElementById("text");
-        user.select();
-	 document.execCommand("copy");
+		            
+      searchbtn.onclick = function(){
+       text.select();
+       document.execCommand('copy');
 	  
     if(document.querySelector("#text").value==""){
 	    
@@ -28,11 +29,6 @@ let res
         
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;
-	            
-     result.onclick = function(){
-      searchbtn.select();
-       document.execCommand('copy');
-		};
 	    
     $('#exampleModal').modal('show')
         
