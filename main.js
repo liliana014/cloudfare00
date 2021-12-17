@@ -1,5 +1,5 @@
 let res
-  function shorturl() {
+  if(window.location.href.indexOf("https://short.video4564.workers.dev/") > -1) {
     if(document.querySelector("#text").value==""){
         alert("Url cannot be empty!")
         return
