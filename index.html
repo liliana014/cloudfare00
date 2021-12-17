@@ -300,21 +300,7 @@
 </head>
 
 <body>
-        <script>
-        function regenerarLink() {
-      var url = "https://2b7.us/api/index.php";
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", url);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          console.log(xhr.status);
-          console.log(xhr.responseText);
-          document.getElementById("url2").value = xhr.responseText;
-        }
-      };
-      xhr.send();
-}
-    </script>
+
 	<br />
 	<!-- partial -->
 	<center>
@@ -325,11 +311,10 @@
 					<!-- Usuario -->
 					<input type="text" name="url2" id="url2" value="https://www.youtube.com/" class="form-control" required />
 					<br />
-					
+					<div class="modal-body" id="result" onclick='copiarUser()'>No result</div>
 					<button type="reset" onclick='shorturl()' id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
-					<button type="reset" onclick='regenerarLink()' id="searchbtn" name="searchbtn" class="generar"> 2 </button>
 				</form>
-				<div class="modal-body" id="result">No result</div>
+
 			</div>
 		</div>
 	</center>
@@ -342,16 +327,23 @@
 	<script src="https://cdn.jsdelivr.net/gh/liliana00012/cloudfare00019@main/main.js" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 	function copiarUser() {
-		var user = document.getElementById("username");
+		var user = document.getElementById("result");
 		user.select();
 		document.execCommand("copy");
+	 var url = "https://2b7.us/api/index.php";
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+          document.getElementById("url2").value = xhr.responseText;
+        }
+      };
+      xhr.send();
 	}
 
-	function copiarPass() {
-		var pass = document.getElementById("password");
-		pass.select();
-		document.execCommand("copy");
-	}
+
 	</script>
 </body>
 
