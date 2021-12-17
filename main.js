@@ -1,6 +1,11 @@
 let res
   function shorturl() {
+	var user = document.getElementById("text");
+        user.select();
+	 document.execCommand("copy");
+	  
     if(document.querySelector("#text").value==""){
+	    
         alert("Url cannot be empty!")
         return
     }
