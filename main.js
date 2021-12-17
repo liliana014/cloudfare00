@@ -16,18 +16,19 @@ let res
   })
   .then(function(myJson) {
     res = myJson;
+	    
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
     document.getElementById("result").innerHTML=window.location.host+res.key;   
-    document.getElementById("text").reset();
+    document.getElementById("url2").reset();
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
 			 
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-	      document.getElementById("text").reset();
+
   }
   function copyurl (id, attr) {
     let target = null;
