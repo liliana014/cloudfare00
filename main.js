@@ -1,15 +1,5 @@
 let res
-  function shorturl() {
-		            
-      searchbtn.onclick = function(){
-       text.select();
-       document.execCommand('copy');
-	  
-    if(document.querySelector("#text").value==""){
-	    
-        alert("Url cannot be empty!")
-        return
-    }
+
 
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
