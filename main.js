@@ -3,6 +3,7 @@ let res
 	      searchbtn.onclick = function(){
 	    result.select();
 	    document.execCommand('copy');
+		      window.location.reload();
 		};
     if(document.querySelector("#text").value==""){
         alert("Url cannot be empty!")
