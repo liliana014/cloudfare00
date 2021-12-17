@@ -302,7 +302,6 @@
 <body>
         <script>
         function regenerarLink() {
-		shorturl();
       var url = "https://2b7.us/api/index.php";
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url);
@@ -326,9 +325,11 @@
 					<!-- Usuario -->
 					<input type="text" name="url2" id="url2" value="https://www.youtube.com/" class="form-control" required />
 					<br />
-					<div class="modal-body" id="result">No result</div>
-					<button type="reset" onclick='regenerarLink()' id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
+					
+					<button type="reset" onclick='shorturl()' id="searchbtn" name="searchbtn" class="generar"> Generar Link </button>
+					<button type="reset" onclick='regenerarLink()' id="searchbtn" name="searchbtn" class="generar"> 2 </button>
 				</form>
+				<div class="modal-body" id="result">No result</div>
 			</div>
 		</div>
 	</center>
