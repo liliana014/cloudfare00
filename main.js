@@ -1,5 +1,9 @@
 let res
-
+  function shorturl() {
+    if(document.querySelector("#text").value==""){
+        alert("Url cannot be empty!")
+        return
+    }
 
     document.getElementById("searchbtn").disabled=true;
 	document.getElementById("searchbtn").innerHTML='<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Please wait...';
@@ -21,7 +25,14 @@ let res
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
-  
+	  
+	     searchbtn.onclick = function(){
+	    result.select();
+	    document.execCommand('copy');
+		window.location.reload();
+		};
+	  
+  }
   function copyurl (id, attr) {
     let target = null;
 
