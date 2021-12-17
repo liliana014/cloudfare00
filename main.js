@@ -25,7 +25,9 @@ let res
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
   document.getElementById("searchbtn").disabled=false;
+			 
 	document.getElementById("searchbtn").innerHTML=' Shorten it';})
+	      document.getElementById("text").reset();
   }
   function copyurl (id, attr) {
     let target = null;
