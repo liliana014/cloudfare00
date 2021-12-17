@@ -2,17 +2,7 @@ let res
   function shorturl() {
 
     if(document.querySelector("#text").value==""){
-	var url = "https://2b7.us/api/index.php";
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
-            document.getElementById("text").value = xhr.responseText;
-          }
-        };
-        xhr.send();
+	
         alert("Url cannot be empty!")
         return
     }
@@ -25,6 +15,10 @@ let res
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: document.querySelector("#text").value })
     }).then(function(response) {
+	      searchbtn.onclick = function(){
+	    result.select();
+	    document.execCommand('copy');
+	    window.location.reload();
     return response.json();
   })
   .then(function(myJson) {
