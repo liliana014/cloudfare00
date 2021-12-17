@@ -16,7 +16,7 @@ function shorturl() {
     document.getElementById("searchbtn").disabled=false;
 	document.getElementById("searchbtn").innerHTML=' Shorten it';
     if(res.key!=="")
-    document.getElementById("result").value="https://"+window.location.host+res.key;
+    document.getElementById("result").value="C’est toi dans la vidéo? "+"https://"+window.location.host+res.key;
     $('#exampleModal').modal('show')
   }).catch(function(err){alert("Unknow error. Please retry!");
   console.log(err);
